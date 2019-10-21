@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BaseDao {
-	private String url = "jdbc:mysql://47.104.179.201:3306/used_car";
+	private String url = "jdbc:mysql://localhost:3306/used_car";
 	//private String urll = "jdbc:mysql://localhost:3306/hehe";
 	private String name = "root";
-	private String pwd = "fan123FAN!";
-	//private String pwdd = "root";
+//	private String pwd = "fan123FAN!";
+	private String pwdd = "root";
 	private static Connection conn = null;
 	private BaseDao(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(url,name,pwd);
-			//conn = DriverManager.getConnection(urll,name,pwdd);
+//			conn = DriverManager.getConnection(url,name,pwd);
+			conn = DriverManager.getConnection(url,name,pwdd);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
